@@ -100,6 +100,15 @@ module Rack
       halt 200
     end
 
+    # log entries sent from the passd daemon on the device for debugging
+    post '/log' do
+      param :logs, Array
+
+      params[:logs].each { |l| puts "passd: #{l}" }
+
+      halt 200
+    end
+
     private
 
     def filter_authorization_for_pass!(pass)
