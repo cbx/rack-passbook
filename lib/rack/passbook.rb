@@ -5,7 +5,7 @@ require 'sinatra/base'
 require 'sinatra/param'
 require 'rack'
 
-require 'sequel'
+require 'sequel/no_core_ext'
 
 module Rack
   class Passbook < Sinatra::Base
